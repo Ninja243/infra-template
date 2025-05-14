@@ -42,9 +42,9 @@ charts:
   # Local chart for development purposes
   akhq:
     namespace: kafka
-    repoURL: "https://github.com/iits-consulting/otc-infrastructure-charts-template.git"
-    targetRevision: "main"
-    path: "local-charts/akhq"
+    repoURL: "https://akhq.io"
+    targetRevision: 0.25.1
+    valueFile: "value-files/akhq/values.yaml"
   # Override values with local values file
   iits-admin-dashboard:
     namespace: admin
