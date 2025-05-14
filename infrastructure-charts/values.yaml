@@ -14,6 +14,7 @@ global:
       ingress.rootDomain: "{{.Values.projectValues.rootDomain}}"
 charts:
   argocd-config:
+    enabled: false
     preventDelete: false
     namespace: argocd
     targetRevision: 0.7.0
