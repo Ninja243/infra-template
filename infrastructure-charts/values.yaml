@@ -18,7 +18,7 @@ charts:
     targetRevision: 0.7.0
     annotations:
       argocd.argoproj.io/sync-wave: "-20"
-  basic-auth-gateway:
+  basic-auth-forward-auth:
     namespace: routing
     targetRevision: 0.2.0 # Was 0.1.0 which seems to exist but can't be found?
     parameters:
