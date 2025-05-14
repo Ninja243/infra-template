@@ -51,7 +51,7 @@ charts:
   # Override values with local values file
   iits-admin-dashboard:
     namespace: admin
-    targetRevision: 1.5.0
+    targetRevision: 1.7.1
     # values files needs to be inside this chart
     valueFile: "value-files/admin-dashboard/values.yaml"
     parameters:
