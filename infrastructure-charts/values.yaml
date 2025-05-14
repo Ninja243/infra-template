@@ -41,7 +41,8 @@ charts:
     overrideChartName: kafka # You can override the chart name
     disableAutoSync: false # If set to true the sync will not happen automatically, you need to do it manually over the UI
     parameters:
-      "kafka.replicaCount": "1"
+      "controller.replicaCount": "1"
+      "listeners.client.protocol": "PLAINTEXT"
   akhq:
     namespace: kafka
     repoURL: "https://akhq.io"
