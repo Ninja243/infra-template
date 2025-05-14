@@ -21,6 +21,13 @@ charts:
     path: "local-charts/basic-auth"
     parameters:
       credentials.password: "{{.Values.projectValues.basicAuthPassword}}"
+  elastic-operator:
+    preventDelete: false
+    namespace: monitoring
+    targetRevision: 8.18.1
+    parameters:
+      ingress.host: "admin.{{.Values.projectValues.rootDomain}}"
+      backup.enabled: "false"
   kafka:
     namespace: kafka
     targetRevision: 22.1.6
