@@ -20,7 +20,7 @@ charts:
       argocd.argoproj.io/sync-wave: "-20"
   basic-auth-forward-auth:
     namespace: routing
-    repoURL: "https://github.com/iits-consulting/otc-infrastructure-charts-template.git"
+    repoURL: "https://github.com/Ninja243/infra-template.git" # "https://github.com/iits-consulting/otc-infrastructure-charts-template.git"
     targetRevision: "main"
     path: "local-charts/basic-auth-forward-auth"
     parameters:
