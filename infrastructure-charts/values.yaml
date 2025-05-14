@@ -21,18 +21,17 @@ charts:
     path: "local-charts/basic-auth"
     parameters:
       credentials.password: "{{.Values.projectValues.basicAuthPassword}}"
-  elastic-operator:
-    preventDelete: false
-    namespace: monitoring
-    targetRevision: 8.18.1
-    parameters:
-      ingress.kibana.host: "admin.{{.Values.projectValues.rootDomain}}"
+  iits-admin-dashboard:
+    namespace: admin
+    targetRevision: 1.7.1
+    # values files needs to be inside this chart
+    valueFile: "value-files/admin-dashboard/values.yaml"
+
   kafka:
     namespace: kafka
     targetRevision: 22.1.6
     parameters:
       "kafka.replicaCount": "1"
-
 #   Remote chart from public helm repo
   bitnami-kafka:
     namespace: bitnami-kafka # Which namespace should the service be deployed
@@ -49,10 +48,3 @@ charts:
     targetRevision: 0.25.1
     valueFile: "value-files/akhq/values.yaml"
   # Override values with local values file
-  iits-admin-dashboard:
-    namespace: admin
-    targetRevision: 1.7.1
-    # values files needs to be inside this chart
-    valueFile: "value-files/admin-dashboard/values.yaml"
-    parameters:
-      deployment.replicaCount: "2"
