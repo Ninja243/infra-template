@@ -18,7 +18,7 @@ charts:
     targetRevision: 0.7.0
     annotations:
       argocd.argoproj.io/sync-wave: "-20"
-  basic-auth:
+  basic-auth-gateway:
     namespace: routing
     targetRevision: 0.1.0
     parameters:
