@@ -16,6 +16,7 @@ charts:
   # Local chart for development purposes
   basic-auth-forward-auth:
     preventDelete: false
+    enabled: false
     namespace: routing
     repoURL: "https://github.com/Ninja243/infra-template.git" # "https://github.com/iits-consulting/otc-infrastructure-charts-template.git"
     targetRevision: "main"
@@ -23,7 +24,6 @@ charts:
     parameters:
       credentials.password: "{{.Values.projectValues.basicAuthPassword}}"
   basic-auth:
-    enabled: false
     namespace: routing
     repoURL: "https://github.com/Ninja243/infra-template.git" # "https://github.com/iits-consulting/otc-infrastructure-charts-template.git"
     targetRevision: "main"
