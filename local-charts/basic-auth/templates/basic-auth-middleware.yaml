@@ -6,3 +6,4 @@ spec:
   basicAuth:
     secret: admin-secret
     headerField: X-WebAuth-User
+    removeHeader: true

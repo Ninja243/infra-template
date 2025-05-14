@@ -48,9 +48,9 @@ In this example we will install an elastic stack (kibana/elasticsearch/filebeat)
 * Open _infrastructure-charts/values.yaml_
 * Add a new service like this:
   ```yaml
-  elasticsearch:
+  elastic-operator:
     namespace: monitoring
-    targetRevision: 8.7.0
+    targetRevision: 8.18.1
     parameters:
       ingress.host: "admin.{{.Values.projectValues.rootDomain}}"
       backup.enabled: "false"

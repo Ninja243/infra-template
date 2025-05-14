@@ -13,15 +13,17 @@ global:
       ingress.host: "admin.{{.Values.projectValues.rootDomain}}"
       ingress.rootDomain: "{{.Values.projectValues.rootDomain}}"
 charts:
-  argocd-config:
-    enabled: false
-    preventDelete: false
-    namespace: argocd
-    targetRevision: 0.7.0
-    annotations:
-      argocd.argoproj.io/sync-wave: "-20"
   # Local chart for development purposes
   basic-auth-forward-auth:
+    preventDelete: false
+    namespace: routing
+    repoURL: "https://github.com/Ninja243/infra-template.git" # "https://github.com/iits-consulting/otc-infrastructure-charts-template.git"
+    targetRevision: "main"
+    path: "local-charts/basic-auth-forward-auth"
+    parameters:
+      credentials.password: "{{.Values.projectValues.basicAuthPassword}}"
+  basic-auth:
+    enabled: false
     namespace: routing
     repoURL: "https://github.com/Ninja243/infra-template.git" # "https://github.com/iits-consulting/otc-infrastructure-charts-template.git"
     targetRevision: "main"
