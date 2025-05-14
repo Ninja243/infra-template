@@ -52,8 +52,7 @@ In this example we will install an elastic stack (kibana/elasticsearch/filebeat)
     namespace: monitoring
     targetRevision: 8.18.1
     parameters:
-      ingress.host: "admin.{{.Values.projectValues.rootDomain}}"
-      backup.enabled: "false"
+      ingress.kibana.host: "admin.{{.Values.projectValues.rootDomain}}"
   ```
 You need to commit and push this change now. Argo detects the changes and applies them after around 2-3 minutes.
 

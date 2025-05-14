@@ -26,13 +26,13 @@ charts:
     namespace: monitoring
     targetRevision: 8.18.1
     parameters:
-      ingress.host: "admin.{{.Values.projectValues.rootDomain}}"
-      backup.enabled: "false"
+      ingress.kibana.host: "admin.{{.Values.projectValues.rootDomain}}"
   kafka:
     namespace: kafka
     targetRevision: 22.1.6
     parameters:
       "kafka.replicaCount": "1"
+
 #   Remote chart from public helm repo
   bitnami-kafka:
     namespace: bitnami-kafka # Which namespace should the service be deployed
